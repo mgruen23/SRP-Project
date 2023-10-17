@@ -83,7 +83,7 @@ final_res <- combine.results(list(allen = cor_res))
 # combine results from two templates
 final_res <- combine.results(list(allen = cor_res, nowakowski = cor_res2))
 
-prefix <- "MGreun Neftel 2019 unsupervised clustering"
+prefix <- "MGruen Neftel 2019 unsupervised clustering"
 
 for(i in 1:length(final_res)){
 	temp_name <- names(final_res)[i]
