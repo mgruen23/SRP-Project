@@ -59,48 +59,9 @@ cellchat_processing <- function(clustered_seurat_folder, platform, cellchat_fold
       netVisual_circle(cellchat_test@net$count, targets.use = c("N-Macrophage"), vertex.weight = groupSize, weight.scale = T, label.edge= F, title.name = paste(sample, "Number of interactions"))
       dev.off()
     }
-      
-    
-    
-    
-    
-  #combine count and weight into single dataframe 
-#     count_dataframe[,4] <- weight_dataframe[,3]
-#     overall_interactions <- count_dataframe
-#     sample_names <- rep(sample, nrow(overall_interactions))
-#     overall_interactions <- cbind(sample_names ,overall_interactions)
-#     colnames(overall_interactions) <- c("Sample", "Source", "Target", "Number", "Weight")
-# # add to large dataframe for all samples
-#     all_subjects_overall_interactions <- rbind(all_subjects_overall_interactions, overall_interactions)
-#     
-#     sample_probabilities <- data_frame()
-#     colnames(sample_probabilities) <- c("Pathway","Source", "Target", "Probability")
-#     num_pathways <- length(cellchat@netP$pathways)
-#     for (i in 1:num_pathways){
-#       prob <- cellchat@netP$prob[,,i]
-#       prob_df <- reshape2::melt(prob)
-#       #add name of pathway as first column 
-#       pathway_name <- rep(cellchat@netP$pathways[i], nrow(prob_df))
-#       prob_df <- cbind(pathway_name, prob_df)
-#       #add to dataframe for the entire sample
-#       sample_probabilities <- rbind(sample_probabilities, prob_df)
-#     }
-#     sample_names <- rep(sample, nrow(sample_probabilities))
-#     sample_probabilities <- cbind(sample_names, sample_probabilities)
-#     colnames(sample_probabilities) <- c("Sample", "Pathway","Source", "Target", "Probability")
-#   
-#     #add probability data for entire sample to large dataframe for all samples
-#     all_subjects_pathways_probabilities <- rbind(all_subjects_pathways_probabilities, sample_probabilities)
-#     
-    
-    
+  
   }
-  setwd(old_dir)
-  #save the two dataframes
-  #write.table(all_subjects_overall_interactions, paste(cellchat_folder, "group2group_interactions.tsv"), sep = "\t", quote = F, row.names = F, col.names = T)
-  #write.table(all_subjects_pathways_probabilities, paste(cellchat_folder, "pathway_probabilities.tsv"), sep = "\t", quote = F, row.names = F, col.names = T)
-  
-  
+
 }
 
 
