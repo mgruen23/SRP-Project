@@ -22,10 +22,6 @@ seur_dar_SMARTSEQ@meta.data$orig.ident <- subject_names
 Idents(seur_dar_SMARTSEQ) <- "orig.ident"
 ######QC STEPS
 
-#> min(seur_dar@meta.data$nCount_RNA)
-#[1] 784513.7
-#> max(seur_dar@meta.data$nCount_RNA)
-#[1] 1e+06
 
 #check percentage of mitochondrial genes (if too high means cell is dying or dead and maybe should be eliminated from analysis)
 seur_dar_SMARTSEQ[["percent.mt"]] <- PercentageFeatureSet(seur_dar_SMARTSEQ, pattern = "^MT-")
