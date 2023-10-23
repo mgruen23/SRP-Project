@@ -24,22 +24,11 @@ rownames(rna_anno) <- rna_anno$Short.ID
 
 
 
-
-# As I mentioned, I've written code for reading in the data
-#and there is old code for running DESeq2 that grabs our comparison of interest (TME.D vs. TME.I).
-#If you can update the deseq2 code to use our DESeq_functions.R script and then add in the FGSEA analysis
-#using the fgsea_functions.R that would be fantastic!
-
-
 ###################
 #### Filter and process count and annotation matrices ####
 ###################
 
 
-#Warning message:
-# Problem with `mutate()` column `^^--arrange_quosure_1`.
-# ℹ `^^--arrange_quosure_1 = as.numeric(Line..)`.
-# ℹ NAs introduced by coercion 
 filt_anno <- rna_anno %>% 
 	arrange(as.numeric(Line..),Line..,Sample.Type, Short.ID) %>%
 	filter(!FLAG.RNA %in% c("terminate", "relabel", "remove")) %>%
